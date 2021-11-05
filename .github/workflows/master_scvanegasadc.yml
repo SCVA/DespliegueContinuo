@@ -20,19 +20,19 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+      
+      - name: TypeScript Build
+        uses: alexthemaster/action-build-typescript@v1.2.1
+        with:
+          branch: 'main'
+          #pushToBranch: true
+          #githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: npm install, build, and test
         run: |
           npm install
           npm run build --prod
         working-directory: .
-
-      - name: TypeScript Build
-        uses: alexthemaster/action-build-typescript@v1.2.1
-        with:
-          branch: main
-          # Your GitHub secret token
-          # githubToken: # optional
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
