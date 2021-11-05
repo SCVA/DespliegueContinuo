@@ -37,4 +37,10 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.4.3"
   }
+  "husky": {
+    "hooks": {
+      "pre-commit": "ng lint && ng test",
+      "pre-push": "ng lint && ng build --aot true && ng test"
+    }
+  }
 }
