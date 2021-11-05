@@ -26,10 +26,10 @@ jobs:
           npm install
           npm run build --prod
         working-directory: .
-        
-      - name: TypeScript Error Reporter
-        uses: andoshin11/typescript-error-reporter-action@v1.0.2
-
+      
+      - name: tsc
+        uses: icrawl/action-tsc@v1
+      
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
