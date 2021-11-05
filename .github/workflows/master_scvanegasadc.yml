@@ -24,9 +24,9 @@ jobs:
       - name: TypeScript Build
         uses: alexthemaster/action-build-typescript@v1.2.1
         with:
+          pushToBranch: true
           branch: 'main'
-          #pushToBranch: true
-          #githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: npm install, build, and test
         run: |
